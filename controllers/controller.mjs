@@ -14,7 +14,6 @@ export const register = async (req, res)=>{
             user = await userClient.user.create({data:{
                 name,email,password:hash
             }});
-            console.log(user);
             userClient.$disconnect();
             return res.json(user).status(201);
         }
